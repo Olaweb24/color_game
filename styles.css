@@ -1,0 +1,214 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Artifika&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Adamina&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(155, 156, 236);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1{
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    box-shadow: 5px 5px 5px;
+    border-radius: 20px;
+    color: rgb(49, 35, 250);
+    font-weight: bolder;
+    font-size: 2.9em;
+    font-family: artifika, Sans-seriff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(130, 132, 230);
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px rgb(49, 35, 250);
+    height: auto;
+}
+
+#gameInstructions{
+    font-family: Aritfika, serif;
+    font-size: 1.9em;
+    text-align: center;
+    font-weight: bolder;
+    padding: 10px;
+    color: white;
+    text-shadow: 3px 2px rgb(17, 8, 146);
+    background-color: rgb(49, 35, 250);
+    border-radius: 0 0 20px 20px ;
+    width: 500px;
+    max-width: 80%;
+    box-shadow: 5px 5px 5px 5px blue;
+    
+
+}
+
+span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.9em;
+}
+
+#colorBox {
+    width: 150px;  
+    height: 150px; 
+    border: 2px solid black; 
+    border-radius: 20px;
+    box-shadow: 5px 5px;
+    margin: 20px auto; 
+
+  }
+
+  #score{
+    font-family: artifika;
+    font-size: 2em;
+    font-weight: bolder;
+    color: white;
+    box-shadow: 2px 2px 2px 2px;
+    text-shadow: 3px 4px blue;
+    padding: 2px;
+    
+}
+
+
+  #colorOptions {
+    display: grid; 
+        grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+        gap: 15px; /* Space between buttons */
+        justify-content: center;
+        margin-top: 15px;
+        align-items: center;
+        
+        
+}
+
+.color-btn {
+    width: 80px;
+    height: 50px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 5px 5px 1px;
+    
+  }
+
+#newGameButton {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-weight: bold;
+    font-size: 1.5em;
+    background-color: rgb(49, 35, 250);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    text-shadow: 3px 2px rgb(17, 8, 146);
+  }
+
+  #newGameButton:hover {
+    background-color: darkblue;
+  }
+
+  #gameStatus{
+    font-size: 1.5em;
+    font-family: artifika;
+    color: white;
+    background-color: blue;
+    padding: 5px;
+    margin-top: 10px;
+  }
+  
+  /* Flash effect for correct guess */
+.correct-answer {
+    animation: flashGreen 0.5s ease-in-out;
+      
+  }
+  
+  @keyframes flashGreen {
+    0% { background-color: white; }
+    50% { background-color: green; }
+    100% { background-color: white; }
+  }
+  
+  /*Fade-out effect for wrong guess */
+  .wrong-answer {
+    animation: fadeOut 0.5s ease-in-out;
+    
+  }
+
+ 
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0.2; }
+  }
+
+  
+/* Small screens (Phones) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em; 
+    }
+    
+    .gameContainer {
+        width: 95%; 
+        padding: 10px;
+    }
+
+    #gameInstructions {
+        font-size: 1.2em;
+        padding: 8px;
+    }
+
+    #colorBox {
+        width: 120px;
+        height: 120px;
+    }
+
+    .color-btn {
+        width: 70px;
+        height: 50px;
+    }
+}
+
+
+/* Medium screens (tablets) */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    .gameContainer {
+        width: 85%;
+    }
+    
+    #colorOptions {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
+  
